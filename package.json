@@ -1,0 +1,58 @@
+{
+  "name": "mcp-openai-ads",
+  "version": "0.1.0",
+  "description": "Model Context Protocol (MCP) server for the OpenAI Ads (ChatGPT Ads) Advertiser API",
+  "mcpName": "io.github.dienhokhanh/mcp-openai-ads",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "openai",
+    "chatgpt-ads",
+    "advertising",
+    "claude"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "PPC Blog Pro",
+    "url": "https://ppcblogpro.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dienhokhanh/mcp-openai-ads.git"
+  },
+  "homepage": "https://github.com/dienhokhanh/mcp-openai-ads#readme",
+  "bugs": {
+    "url": "https://github.com/dienhokhanh/mcp-openai-ads/issues"
+  },
+  "type": "module",
+  "bin": {
+    "mcp-openai-ads": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsc -p tsconfig.build.json --watch",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "inspect": "npx @modelcontextprotocol/inspector node dist/index.js",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.31.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.2"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.dienhokhanh/mcp-openai-ads",
+  "title": "OpenAI Ads (ChatGPT Ads)",
+  "description": "Report on and manage OpenAI Ads (ads in ChatGPT) campaigns, ad groups and ads.",
+  "websiteUrl": "https://ppcblogpro.com/",
+  "repository": {
+    "url": "https://github.com/dienhokhanh/mcp-openai-ads",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "mcp-openai-ads",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "OPENAI_ADS_API_KEY",
+          "description": "Advertiser API key from OpenAI Ads Manager > Settings",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string"
+        },
+        {
+          "name": "OPENAI_ADS_ALLOW_WRITES",
+          "description": "Set to true to enable create/update/pause tools (default: read-only)",
+          "isRequired": false,
+          "format": "boolean"
+        },
+        {
+          "name": "OPENAI_ADS_MAX_ROWS",
+          "description": "Maximum report rows returned per call (default 200)",
+          "isRequired": false,
+          "format": "number"
+        }
+      ]
+    }
+  ]
+}
